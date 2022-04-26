@@ -1,9 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import SearchBar from "./SearchBar/SearchBar.jsx";
+import Footer from "./Footer/Footer.jsx";
+
 
 function App() {
   return (
     <div>
+  <SearchBar />
+  <Footer />
     
     </div>
   );
