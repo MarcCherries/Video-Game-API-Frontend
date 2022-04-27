@@ -4,15 +4,18 @@ import Form from 'react-bootstrap/Form'
 import "./SearchBar.css"
 
 const SearchBar = (props) => {
+    const [searchTerm, setSearchTerm] = useState ("Zelda");
     return ( 
         <div>
             <div className="search-container">
             <h3>gAME dATA</h3>
- <Form>
-  <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-    <Form.Control type="search" placeholder="Search..." />
-  </Form.Group>
-        </Form>
+<form onSubmit={props.handleSearch} >
+    <input onChange={(event)=>props.setSearchItem(event.target.value) } type="text"  >
+    </input>
+    <button type="submit">Submit</button>
+
+</form>
+             
         </div>
         </div>
      );
