@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
 import "./SearchBar.css"
 
+
 const SearchBar = (props) => {
-    const [searchTerm, setSearchTerm] = useState ("Zelda");
+   
     return ( 
         <div>
             <div className="search-container">

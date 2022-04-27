@@ -1,15 +1,37 @@
 import React, { Fragment, useState } from 'react';
+import ViewButtonModal from '../ViewButtonModal/ViewButtonModal';
 import "./DisplaySearchResults.css"
 const DisplaySearchResults = (props) => {
+   const [modal, setModal] = useState(false);
+   const [currentGame, setCurrentGame] = useState("The Legend of Zelda: Twilight Princess");
+
+   function handleView(e){
+       e.preventDefault();
+     
+       let game = props.searchDisplay.filter((item)=>{
+           if (item.name == currentGame){
+              
+               return true
+           }
+           setCurrentGame(game)
+           
+
+       })
+       
+
+   }
+   console.log(currentGame)
+   console.log(modal)
+
     return ( 
         <div>
         <table className='results-headers'>
         <tr>
-            <th className="name-header" >NAME</th>
-            <th className="year-header">YEAR</th>
-            <th className="publisher-header">PUBLISHER</th>
-            <th className="genre-header">GENRE</th>
-            <th className="rank-header">RANK</th>
+            <th className="name-header title" >TITLE</th>
+            <th className="platform-header platform">PLATFORM</th>
+            <th className="publisher-header publisher">PUBLISHER</th>
+            <th className="genre-header genre">GENRE</th>
+            <th className="year-header year">YEAR</th>
           
         </tr>
         </table>
@@ -20,16 +42,19 @@ const DisplaySearchResults = (props) => {
                 <table className='results-table'>
                         <tr>
                             
-                            <td className='game-name' >{game.name} 
-
-                            </td>
-                            <td className="game-year">{game.year}</td>
-                            <td className="game-publisher">{game.publisher}</td>
-                            <td className="game-genre">{game.genre}</td>
-                            <td className="game-rank">{game.rank}</td>
+                            <td className='title' >{game.name} </td>
+                            <td className="platform">{game.platform}</td>
+                            <td className="publisher">{game.publisher}</td>
+                            <td className="genre">{game.genre}</td>
+                            <td className="year">{game.year}</td>
+                            </tr>
+                            <button type="submit"   onClick={()=>setCurrentGame(game)}>View Charts</button>
+                            <button type ="submit" onClick={()=>setModal(true)}></button>
+                            <ViewButtonModal modal={modal} onClose={() =>setModal(false)} game={currentGame} handleView={props.handleView}/>
+           
                                     
                            
-                        </tr>
+                      
                 </table>
                 </div>
             )})}

@@ -1,4 +1,26 @@
-.game-name {
-    width:auto;
-    border: 2px solid gray;
+.title {
+    width:25rem;
+    text-align: center;
+  
 }
+.platform {
+    width:5rem;
+    text-align: center;
+  
+}
+.publisher {
+    width:7rem;
+    text-align: center;
+   
+}
+.genre {
+    width:5rem;
+    text-align: center;
+  
+}
+.year {
+    width:5rem;
+    text-align: center;
+  
+}
+
