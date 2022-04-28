@@ -18,11 +18,13 @@ const DisplaySearchResults = (props) => {
     return ( 
         <div>
             <div className="sticky">
-            <p>Total Results: {props.searchDisplay && props.searchDisplay.length}</p>
+            <p className='results'>Total Results: {props.searchDisplay && props.searchDisplay.length}</p>
+
             {currentGame &&
                         <button className="game-chart" type ="submit" onClick={()=>setModal(true)}>Chart For {currentGame.name}</button>
                         
             }
+
             </div>
         <table className='results-headers'>
         <tr>

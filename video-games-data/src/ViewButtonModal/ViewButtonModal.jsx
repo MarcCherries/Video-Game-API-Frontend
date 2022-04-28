@@ -30,18 +30,10 @@ if (!props.modal){
     return null
 }
 
-console.log(platform)
-console.log(chart)
-console.log(chartb)
+
 
 function generateChartData(){
 
-      
-    
-    
-
-  
-   
 
  const data = [
     ["Element", "Density", { role: "style" }],
@@ -58,7 +50,9 @@ function generateChartData(){
 function generateChartDatab(){
 
       
-    
+    let consoleSales = platform.map((item) =>{
+        return [item.platform, item.globalSales, "blue"]
+    })
     
 
   
@@ -66,11 +60,7 @@ function generateChartDatab(){
 
  const data = [
     ["Element", "Density", { role: "style" }],
-    ["Europe Sales", props.game.europeSales, "red"],
-    ["Japan Sales", props.game.japanSales, "red"],
-    ["North America Sales", props.game.northAmericaSales, "red"],
-    ["Other Sales", props.game.otherSales, "red"],
- 
+    ...consoleSales
   ];
 
 

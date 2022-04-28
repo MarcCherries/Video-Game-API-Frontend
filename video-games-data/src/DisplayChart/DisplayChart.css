@@ -1,0 +1,16 @@
+.global-chart-heading{
+    text-align: center;
+
+}
+
+.toggle-button {
+    margin-left: 38rem;
+    width: 8rem;
+    height: 4rem;
+    background-color:rgba(9, 30, 87, 0.815);
+    color:bisque
+}
+
+.chart-main {
+    margin-top: 1rem;
+}

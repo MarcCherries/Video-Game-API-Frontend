@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Chart } from "react-google-charts";
+import "./DisplayChart.css"
 
 const DisplayChart = (props) => {
 
@@ -25,11 +26,11 @@ const DisplayChart = (props) => {
 
   
         let dataArrays = props.global.map((item, index) =>{
-            return [props.data[index], item, 'blue']
+            return [props.data[index], item, 'light blue']
         });
     
      const data = [
-        ["Element", "Density", { role: "style" }],
+        ["Element", "Sales (in Millions USD)", { role: "style" }],
         ...dataArrays
         
       ];
@@ -61,12 +62,22 @@ const DisplayChart = (props) => {
     return ( 
         <div>
             { chart &&
-    <Chart chartType="ColumnChart" width="100%" height="400px" data={generateChartData()} />
+            <div className='chart-container'>
+            <h3 className="global-chart-heading">GLOBAL SALES SINCE 2013 BY PLATFORM</h3>
+    <Chart  chartType="ColumnChart" width="100%" height="350px" data={generateChartData()} />
+    </div>
             }
+      
             { chartb &&
-    <Chart chartType="ColumnChart" width="100%" height="400px" data={generateChartDataB()} />
+                        <div className='chart-container'>
+
+                        <h3 className="global-chart-heading">GLOBAL SALES ALL TIME BY PLATFORM</h3>
+
+    <Chart className="chart-main"chartType="ColumnChart" width="100%" height="350px" data={generateChartDataB()} />
+    </div>
             }
-            <button type="submit" onClick={handleClick}>Toggle Charts</button>
+
+            <button className='toggle-button' type="submit" onClick={handleClick}>Toggle Charts</button>
         </div>
 
      );
