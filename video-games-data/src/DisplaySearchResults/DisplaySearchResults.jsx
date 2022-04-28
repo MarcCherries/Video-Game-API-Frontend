@@ -3,28 +3,27 @@ import ViewButtonModal from '../ViewButtonModal/ViewButtonModal';
 import "./DisplaySearchResults.css"
 const DisplaySearchResults = (props) => {
    const [modal, setModal] = useState(false);
-   const [currentGame, setCurrentGame] = useState("The Legend of Zelda: Twilight Princess");
+   const [currentGame, setCurrentGame] = useState();
 
    function handleView(e){
        e.preventDefault();
      
-       let game = props.searchDisplay.filter((item)=>{
-           if (item.name == currentGame){
-              
-               return true
-           }
-           setCurrentGame(game)
-           
-
-       })
+     
        
 
    }
    console.log(currentGame)
-   console.log(modal)
-
+  
+   
     return ( 
         <div>
+            <div className="sticky">
+            <p>Total Results: {props.searchDisplay && props.searchDisplay.length}</p>
+            {currentGame &&
+                        <button className="game-chart" type ="submit" onClick={()=>setModal(true)}>Chart For {currentGame.name}</button>
+                        
+            }
+            </div>
         <table className='results-headers'>
         <tr>
             <th className="name-header title" >TITLE</th>
@@ -35,22 +34,23 @@ const DisplaySearchResults = (props) => {
           
         </tr>
         </table>
+      
         <div>
             {props.searchDisplay && props.searchDisplay.map((game) =>{
             return(
                 <div>
                 <table className='results-table'>
-                        <tr>
-                            
+                        <tr>  
                             <td className='title' >{game.name} </td>
                             <td className="platform">{game.platform}</td>
                             <td className="publisher">{game.publisher}</td>
                             <td className="genre">{game.genre}</td>
                             <td className="year">{game.year}</td>
                             </tr>
-                            <button type="submit"   onClick={()=>setCurrentGame(game)}>View Charts</button>
-                            <button type ="submit" onClick={()=>setModal(true)}></button>
-                            <ViewButtonModal modal={modal} onClose={() =>setModal(false)} game={currentGame} handleView={props.handleView}/>
+                            <button type="submit"   onClick={()=>setCurrentGame(game)}>Generate Chart</button>
+                          
+               
+                            <ViewButtonModal modal={modal} onClose={() =>setModal(false)} game={currentGame} handleView={props.handleView} searchDisplay={props.searchDisplay} />
            
                                     
                            

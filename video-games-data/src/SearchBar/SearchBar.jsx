@@ -7,11 +7,11 @@ const SearchBar = (props) => {
     return ( 
         <div>
             <div className="search-container">
-            <h3>gAME dATA</h3>
+            <h3>GAME CHANGER</h3>
 <form onSubmit={props.handleSearch} >
-    <input onChange={(event)=>props.setSearchItem(event.target.value) } type="text"  >
+    <input className="search-input" onChange={(event)=>props.setSearchItem(event.target.value) } type="text"  >
     </input>
-    <button type="submit">Submit</button>
+    <button className="submit" type="submit">Submit</button>
 
 </form>
              
