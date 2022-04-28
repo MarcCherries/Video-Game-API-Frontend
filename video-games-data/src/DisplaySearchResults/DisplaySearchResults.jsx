@@ -21,7 +21,7 @@ const DisplaySearchResults = (props) => {
             <p className='results'>Total Results: {props.searchDisplay && props.searchDisplay.length}</p>
 
             {currentGame &&
-                        <button className="game-chart" type ="submit" onClick={()=>setModal(true)}>Chart For {currentGame.name}</button>
+                        <button className="game-chart" type ="submit" onClick={()=>setModal(true)}>Charts For {currentGame.name}</button>
                         
             }
 

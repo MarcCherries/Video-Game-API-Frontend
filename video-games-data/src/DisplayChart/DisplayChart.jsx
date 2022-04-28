@@ -26,7 +26,7 @@ const DisplayChart = (props) => {
 
   
         let dataArrays = props.global.map((item, index) =>{
-            return [props.data[index], item, 'light blue']
+            return [props.data[index], item, '#0099f2=']
         });
     
      const data = [
@@ -47,7 +47,7 @@ const DisplayChart = (props) => {
 
   
         let dataArrays = props.global.map((item, index) =>{
-            return [props.data[index], item, 'red']
+            return [props.data[index], item, '#0307fc']
         });
     
      const data = [

@@ -42,7 +42,7 @@
 
 .game-chart {
     height: 4rem;
-    background-color: blue;
+    background-color: rgba(9, 30, 87, 0.815);
     color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
 }

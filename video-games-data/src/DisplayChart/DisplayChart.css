@@ -1,6 +1,7 @@
 .global-chart-heading{
     text-align: center;
-
+    margin-bottom: 0;
+    color: rgba(1, 0, 66, 0.938);
 }
 
 .toggle-button {
@@ -11,6 +12,4 @@
     color:bisque
 }
 
-.chart-main {
-    margin-top: 1rem;
-}
+
