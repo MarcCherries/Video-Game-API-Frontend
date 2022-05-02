@@ -1,30 +1,106 @@
-.title {
-    width:20rem;
+.name-header{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
+    width:35rem;
     text-align: left;
+    color:rgba(9, 30, 87, 0.945);
+
+}
+.platform-header{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
+    width:8rem;
+    text-align: center;
+    color:rgba(9, 30, 87, 0.945);
+
+}
+.year-header{
+    width:4rem;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
+    color:rgba(9, 30, 87, 0.945);
+
+}
+.genre-header{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
+    width:10rem;
+    text-align: center;
+    color:rgba(9, 30, 87, 0.945);
+
+}
+.publisher-header{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
+    width:20rem;
+    text-align: center;
+    color:rgba(9, 30, 87, 0.945);
+
+}
+
+.results-row {
+    background-color: rgba(47, 154, 216, 0.342);
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: rgba(9, 30, 87, 0.945);
+}
+
+.results-row:hover {
+    background-color: rgb(47, 154, 216);
+    margin: 0;
+    padding: 0;
+    border: none
+}
+
+.title {
+    
+    width:35rem;
+    text-align: left;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem
+  
   
 }
 .platform {
-    width:7rem;
-    text-align: center;
   
+    width:8rem;
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem
+
 }
 .publisher {
-    width:7rem;
+    width:20rem;
     text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem
+ 
    
 }
 .genre {
-    width:7rem;
+    width:10rem;
     text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem
+  
   
 }
 .year {
     width:4rem;
     text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem
+ 
   
 }
 
 .sticky{
+    border: 1px solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     position: -webkit-sticky; 
     position: sticky;
     top: 0;
@@ -35,15 +111,48 @@
     
 }
 
-.results {
-    margin-bottom: 0;
-    font-size: 1.5rem;
+.results-headers {
+    position: -webkit-sticky; 
+    position: sticky;
+    top: 4rem;
+    padding-bottom: 1rem;
+
 }
 
+
+.results {
+    font-family: cursive;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: rgba(1, 15, 53, 0.897);;
+  
+}
+
+.arrow-image {
+    background-color: white;
+  
+}
+
+
+
+
 .game-chart {
+    position: absolute;
+    right: 0;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
     height: 4rem;
+    border-radius: 15px;
     background-color: rgba(9, 30, 87, 0.815);
     color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.generate-button {
+    background-color: rgba(9, 30, 87, 0.815);
+    color: whitesmoke;
+    border-radius: 15px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}

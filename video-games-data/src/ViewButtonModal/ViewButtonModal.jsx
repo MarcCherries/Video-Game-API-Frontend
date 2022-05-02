@@ -6,6 +6,20 @@ const ViewButtonModal = (props) => {
     const [platform, setPlatform] = useState()
     const [chart, setChart] = useState(true)
     const [chartb, setChartb] = useState(false)
+    const options ={
+        title: "Sales by Platform",
+        is3D: true,
+        colors: ["#091E57", "blue", "#2F9AD8", "purple", "gray", "light blue", "white"]
+        
+    
+        
+    
+      }
+    const optionsb ={
+        title: "Sales by Region",
+        is3D: true,
+        colors: ["#091E57", "blue", "#2F9AD8", "purple", "white", "gray", "light blue"]
+      }
 
 
 
@@ -36,11 +50,11 @@ function generateChartData(){
 
 
  const data = [
-    ["Element", "Density", { role: "style" }],
-    ["Europe Sales", props.game.europeSales, "red"],
+    ["Element", "Sales (Millions USD)", { role: "style" }],
+    ["Europe Sales", props.game.europeSales, "blue"],
     ["Japan Sales", props.game.japanSales, "blue"],
-    ["North America Sales", props.game.northAmericaSales, "green"],
-    ["Other Sales", props.game.otherSales, "yellow"],
+    ["North America Sales", props.game.northAmericaSales, "blue"],
+    ["Other Sales", props.game.otherSales, "#ffffff"],
  
   ];
 
@@ -59,9 +73,11 @@ function generateChartDatab(){
    
 
  const data = [
-    ["Element", "Density", { role: "style" }],
+    ["Element", "Sales", { role: "style" }],
     ...consoleSales
   ];
+
+
 
 
   return data
@@ -71,18 +87,20 @@ function generateChartDatab(){
         <div className='modal'>
        
             <div className='modal-window'>
-                <button type="sumbit" onClick={handleClick}>Toggle Charts</button>
-                <h3>{props.game.name}</h3> <span>Platform: {props.game.platform}</span>
-                <h3>Total Sales Since 2013</h3>
+                <div className='game-container'>
+                <h3 className='modal-game'>{props.game.name}</h3> 
+                <button className="submit-modal" type="submit" onClick={handleClick}>Toggle Charts</button>
+                </div>
+                                
                 {chart &&
-            <Chart chartType="ColumnChart" width="100%" height="400px" data={generateChartData()} />
+            <Chart chartType="PieChart" width="100%" height="400px" data={generateChartData()} options={optionsb} />
             }
                  {chartb &&
-            <Chart chartType="ColumnChart" width="100%" height="400px" data={generateChartDatab()} />
+            <Chart chartType="PieChart" width="100%" height="400px" data={generateChartDatab()} options={options} />
             }
              </div>
            
-            <span onClick={props.onClose} className="close">&times;</span>
+            <span onClick={props.onClose} className="close">Close&times;</span>
            
            
         </div>

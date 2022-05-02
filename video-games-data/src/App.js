@@ -26,6 +26,47 @@ function App() {
     141.05999999999992
 ]);
   const [topGames, setTopGames] = useState(["PS3", "XOne"]);
+  const [allTime, setAllTime] = useState(["PS3", "XOne"]);
+  const [plaforms, setPlatforms] = useState(["PS3", "XOne"]);
+  const [allGames, setAllGames] = useState(["PS3", "XOne"]);
+
+  useEffect(()=>{
+    const fetchPlatforms = async () => {
+      try {
+        let response = await axios.get("https://localhost:7260/api/Platforms")
+        setPlatforms(response.data)
+      } catch (error) {
+         console.log(error.message)
+      }
+    };
+    fetchPlatforms();
+  }, []);
+  useEffect(()=>{
+    const fetchAllGames = async () => {
+      try {
+        let response = await axios.get("https://localhost:7260/api/PlatformGames")
+        setAllGames(response.data)
+      } catch (error) {
+         console.log(error.message)
+      }
+    };
+    fetchAllGames();
+  }, []);
+  console.log(allGames)
+  
+
+  useEffect(()=>{
+    const fetchAllTime = async () => {
+      try {
+        let response = await axios.get("https://localhost:7260/api/AllTime")
+        setAllTime(response.data)
+      } catch (error) {
+         console.log(error.message)
+      }
+    };
+    fetchAllTime();
+  }, []);
+  console.log(allTime)
 
 useEffect(()=>{
     const fetchTop = async () => {
@@ -88,7 +129,7 @@ async function handleSearch(event){
   return (
     <div>
   <SearchBar handleSearch={handleSearch} setSearchItem={setSearchItem}/>
-  <DisplayChart data={platformData} global={globalData}/>
+  <DisplayChart data={platformData} global={globalData} allTime={allTime} platforms={plaforms} allGames={allGames}/>
   <DisplaySearchResults searchDisplay={searchDisplay}/>
 
   <Footer />

@@ -1,13 +1,9 @@
 
 
-.search-container {
+.searchbar-container {
     border: 4px inset rgba(9, 137, 212, 0.808);
     background-color: whitesmoke;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
     padding: .5rem;
 }
 
@@ -32,7 +28,8 @@
 }
 .search-input:focus {
     height: 1.5rem;
-    border: 8px inset rgba(17, 131, 207, 0.918)
+    border: 8px inset rgba(17, 131, 207, 0.918);
+  
     
 
 }
@@ -45,3 +42,20 @@
     letter-spacing: .5rem;
 }
 
+.image-logo {
+    display: flex;
+    width: 10rem;
+    
+}
+
+.logo-image {
+    position: absolute;
+    top: .5rem;
+    left: 38.5rem
+}
+
+.search-container {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+}

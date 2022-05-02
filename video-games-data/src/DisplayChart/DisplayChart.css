@@ -1,15 +1,25 @@
 .global-chart-heading{
     text-align: center;
     margin-bottom: 0;
-    color: rgba(1, 0, 66, 0.938);
+    color: White;
+
 }
 
+
+
 .toggle-button {
+    border-radius: 10px;
+    margin-top: .25rem;
     margin-left: 38rem;
-    width: 8rem;
-    height: 4rem;
+    width: 6rem;
+    height: 3rem;
     background-color:rgba(9, 30, 87, 0.815);
-    color:bisque
+    color: whitesmoke
+}
+
+.chart-container {
+    background-color: rgba(9, 30, 87, 0.815);
+
 }
 
 
